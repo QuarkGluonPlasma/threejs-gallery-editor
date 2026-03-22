@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+}
+
+.wrap {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .Header {
+    height: 60px;
+    border-bottom: 1px solid #000;
+  }
+
+  .editor {
+    flex: 1;
+
+    .Main {
+      position: relative;
+      #threejs-3d-container {
+        position: absolute;
+        z-index: 1;
+      }
+      #threejs-2d-container {
+        position: absolute;
+        z-index: 2;
+      }
+      height: calc(100vh - 60px);
+
+      .mode-change-btns {
+          position: absolute;
+          z-index: 3;
+          bottom: 20px;
+          left: 20px;
+      }
+    }
+
+    position: relative;
+
+    .drawer-bar {
+      width: 10px;
+      height: 80px;
+      background: black;
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor:pointer;
+    }
+    .Menu {
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: calc(100vh - 60px);
+      background: pink;
+
+      transition: left 0.5s ease-in-out;
+    }
+    .Menu {
+      left: 0;
+      border-right: 1px solid #000;
+    }
+  }
+}
