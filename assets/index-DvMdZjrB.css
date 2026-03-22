@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+}
+
+.gallery-editor-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-editor-layout > .ant-layout {
+  flex: 1;
+  min-height: 0;
+}
+.gallery-editor-layout .app-header {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  background: #fff;
+  border-bottom: 1px solid #000;
+}
+.gallery-editor-layout .app-header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.gallery-editor-layout .app-header .header-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.gallery-editor-layout .app-sider {
+  background: #fff;
+  border-right: 1px solid #000;
+}
+.gallery-editor-layout .app-sider .ant-menu {
+  margin-top: 16px;
+}
+.gallery-editor-layout .app-content {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-editor-layout .main-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.gallery-editor-layout .main-content #threejs-3d-container,
+.gallery-editor-layout .main-content #threejs-2d-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.gallery-editor-layout .main-content .mode-change-btns {
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  left: 20px;
+}
+.gallery-editor-layout .main-content .character-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 20px 24px 24px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #fafbfc 0%, #f0f2f5 100%);
+}
+.gallery-editor-layout .main-content .character-view-header {
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+.gallery-editor-layout .main-content .character-view-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.88);
+  letter-spacing: 0.02em;
+}
+.gallery-editor-layout .main-content .character-view-desc {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.45);
+  line-height: 1.5;
+}
+.gallery-editor-layout .main-content .character-split {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  min-height: 0;
+  align-items: stretch;
+}
+.gallery-editor-layout .main-content .character-panel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  overflow: hidden;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+.gallery-editor-layout .main-content .character-panel:focus-visible {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(22, 119, 255, 0.45);
+}
+.gallery-editor-layout .main-content .character-panel:hover {
+  border-color: rgba(22, 119, 255, 0.35);
+  box-shadow: 0 4px 14px rgba(22, 119, 255, 0.08);
+}
+.gallery-editor-layout .main-content .character-panel--active {
+  border-color: #1677ff;
+  box-shadow: 0 0 0 1px rgba(22, 119, 255, 0.2), 0 6px 20px rgba(22, 119, 255, 0.12);
+}
+.gallery-editor-layout .main-content .character-panel--active:hover {
+  border-color: #1677ff;
+}
+.gallery-editor-layout .main-content .character-panel-head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.gallery-editor-layout .main-content .character-panel--active .character-panel-head {
+  background: linear-gradient(180deg, #e6f4ff 0%, #fff 100%);
+  border-bottom-color: rgba(22, 119, 255, 0.15);
+}
+.gallery-editor-layout .main-content .character-panel-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+}
+.gallery-editor-layout .main-content .character-panel-badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1677ff;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(22, 119, 255, 0.1);
+  border: 1px solid rgba(22, 119, 255, 0.2);
+}
+.gallery-editor-layout .main-content .character-panel-viewport {
+  flex: 1;
+  min-height: 280px;
+  position: relative;
+  background: #f0f2f5;
+}
+.gallery-editor-layout .main-content .character-panel-viewport canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
