@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { Menu } from 'antd'
 
-function Menu() {
-    const [left, setLeft] = useState(0);
+const menuItems = [
+  { key: 'gallery', label: '画廊编辑' },
+  { key: 'character', label: '人物编辑' },
+]
 
-    return <div className="Menu" style={{left: left}}>
-        Menu
-        <div className="drawer-bar" onClick={() => {
-            setLeft(left === 0 ? -200 : 0);
-        }}></div>
-    </div>
+function AppSider() {
+  return (
+    <Menu
+      mode="inline"
+      defaultSelectedKeys={['gallery']}
+      items={menuItems}
+      style={{ height: '100%', borderRight: 0 }}
+    />
+  )
 }
 
-export default Menu;
+export default AppSider
